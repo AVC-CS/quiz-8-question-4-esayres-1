@@ -18,5 +18,15 @@ int splitline(string txt, char delimiter, char array[][MAXLEN]){
         array[cnt][j] = txt[i];
         j++;
 
+        if(txt[i] == delimiter){
+            array[cnt][j - 1] = '\0';
+            cnt++;
+            j = 0;
+        }
+
+        i++;
     }
+
+    array[cnt][j] = '\0';
+    return cnt + 1;
 }
